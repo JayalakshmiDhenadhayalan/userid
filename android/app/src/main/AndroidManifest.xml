@@ -3,6 +3,8 @@
         android:label="userlist"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+        <meta-data android:name="com.google.android.geo.48cb8edaa7624494b5f130621232410"
+               android:value="48cb8edaa7624494b5f130621232410"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"
