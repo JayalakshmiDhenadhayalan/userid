@@ -34,7 +34,8 @@ class _DetailViewState extends State<DetailView> {
               padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
               child: Row(
                 children: [
-                  Column(crossAxisAlignment: CrossAxisAlignment.start,
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(value.userName),
                       Text(value.email),
@@ -47,18 +48,13 @@ class _DetailViewState extends State<DetailView> {
                   ),
                   Column(
                     children: [
-                      ElevatedButton(onPressed: (){
-GoogleMap(
-  // all the other arguments
-  onTap: (latLng) {
-    print('${latLng.latitude}, ${latLng.longitude}');
-  }, initialCameraPosition: CameraPosition(target: LatLng(37.7749, -122.4194),
-));
-                      },
-                       child: Text("Map"))
-
-
-
+                      ElevatedButton(
+                          onPressed: () {
+                  value.launchURL('https://maps.google.com/?q=${value.Lat},${value.lng}');
+                  print('https://maps.google.com/?q=${value.Lat},${value.lng}');
+                   //  https://maps.google.com/?q=[lat],[long]
+                          },
+                          child: Text("Map"))
                     ],
                   )
                 ],

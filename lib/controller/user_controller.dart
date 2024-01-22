@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:userlist/model/user_model.dart';
 import 'package:http/http.dart' as http;
 
@@ -54,6 +55,16 @@ String lng='';
   notifyListeners();
 
   }
+
+
+  Future<void> launchURL(String url) async {
+  final Uri uri = Uri.parse(url); // Convert String to Uri
+  if (await canLaunchUrl(uri)) {
+    await launchUrl(uri);
+  } else {
+    throw 'Could not launch $uri';
+  }
+}
 
   
 }
